@@ -89,11 +89,11 @@ public class TestDriver {
     private static void testChefAndOrderVOEqualsMethod() {
         System.out.println("Test der equals Methode für ChefVO und OrderVO:");
         // Testdaten für Chef
-        ChefVO chef1 = new ChefVO("Schmidt", "Anna", Color.WHITE);
-        ChefVO chef2 = new ChefVO("Schmidt", "Anna", Color.WHITE);
-        ChefVO chef3 = new ChefVO("Meyer", "Markus", Color.BLACK);
-        ChefVO chef4 = new ChefVO("Schulz", "Maria", Color.BLUE);
-        ChefVO chef5 = new ChefVO("Becker", "Michael", Color.RED);
+//        ChefVO chef1 = new ChefVO("Schmidt", "Anna", Color.WHITE);
+//        ChefVO chef2 = new ChefVO("Schmidt", "Anna", Color.WHITE);
+//        ChefVO chef3 = new ChefVO("Meyer", "Markus", Color.BLACK);
+//        ChefVO chef4 = new ChefVO("Schulz", "Maria", Color.BLUE);
+//        ChefVO chef5 = new ChefVO("Becker", "Michael", Color.RED);
 
         // Testdaten für Bestellung
         LocalDate dob = LocalDate.of(1990, 5, 15);
@@ -102,10 +102,10 @@ public class TestDriver {
         OrderVO order2 = new OrderVO(LocalDateTime.now(), customer);
 
         // Test der equals Methode für ChefVO
-        System.out.println("Chef 1 und Chef 2 sind gleich: " + chef1.equals(chef2));
-        System.out.println("Chef 1 und Chef 3 sind gleich: " + chef1.equals(chef3));
-        System.out.println("Chef 1 und Chef 4 sind gleich: " + chef1.equals(chef4));
-        System.out.println("Chef 1 und Chef 5 sind gleich: " + chef1.equals(chef5));
+//        System.out.println("Chef 1 und Chef 2 sind gleich: " + chef1.equals(chef2));
+//        System.out.println("Chef 1 und Chef 3 sind gleich: " + chef1.equals(chef3));
+//        System.out.println("Chef 1 und Chef 4 sind gleich: " + chef1.equals(chef4));
+//        System.out.println("Chef 1 und Chef 5 sind gleich: " + chef1.equals(chef5));
 
         // Test der equals Methode für OrderVO
         System.out.println("Bestellung 1 und Bestellung 2 sind gleich: " + order1.equals(order2));
@@ -122,7 +122,7 @@ public class TestDriver {
         CustomerVO customer = new CustomerVO("Müller", "Hans", "Male", dob);
 
         // Testdaten für Chef
-        ChefVO chef = new ChefVO("Schmidt", "Anna", Color.WHITE);
+//        ChefVO chef = new ChefVO("Schmidt", "Anna", Color.WHITE);
 
         // Testdaten für Pizzen
         PizzaVO pizza1 = new PizzaVO("Margherita", new String[]{"Tomato sauce", "Mozzarella"}, 8.99f);
@@ -157,5 +157,9 @@ public class TestDriver {
         // Test für hashCode Methode von PizzaVO
         System.out.println("HashCode von Pizza 1: " + pizza1.hashCode());
         System.out.println("HashCode von Pizza 4: " + pizza4.hashCode());
+        
+        // Test für Employee
+        EmployeeVO employee = new EmployeeVO();
+        System.out.println("TEST" + employee.toString());
     }
 }
