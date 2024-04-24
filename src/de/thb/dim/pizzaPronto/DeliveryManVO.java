@@ -7,12 +7,21 @@ public class DeliveryManVO extends EmployeeVO{
 		this(null,null,null);
 	}
 	public DeliveryManVO(String personnelNo, String lastName, String firstName) {
-		super(personnelNo, lastName, firstName);
-		setDriverLicence(driverLicence);
+		super(personnelNo, lastName,firstName);
+		vacationDays = 25;
+		salary = 2100;
+		driverLicence = "XYZ123";
 	}
-	@Override
 	public String toString() {
-		return super.toString() + "DeliveryManVO [driverLicence=" + driverLicence +"]";
+		StringBuffer sb = new StringBuffer();
+		
+		sb.append("\nDelivery Man:\n" );
+		
+		sb.append(super.toString());
+		sb.append("\n Driver lecende: " + driverLicence);
+		
+		return sb.toString();
+		
 	}
 
 	public String getDriverLicence() {

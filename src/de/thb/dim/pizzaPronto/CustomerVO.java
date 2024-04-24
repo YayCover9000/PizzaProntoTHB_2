@@ -7,8 +7,6 @@ import java.util.Objects;
 
 public class CustomerVO extends PersonVO{
 private static int nextId = 0;
-//private String lastName;
-//private String firstName;
 private String gender;
 private LocalDate dateOfBirth;
 private int id = nextId;	
@@ -16,7 +14,6 @@ private OrderVO order;
 
 
 	public CustomerVO() {
-//		this(null, null, null, null);
 		this(null, null, null, 0, null,null);
 	}
 	public CustomerVO(String lastName, String firstName, LocalDate dateOfBirth) {
@@ -34,8 +31,6 @@ private OrderVO order;
 		setGender(gender);
 		setDateOfBirth(dateOfBirth);
 		nextId += 1;
-		
-	
 	}
 	
 	public short calculateAge() {
@@ -71,12 +66,6 @@ private OrderVO order;
 		
 	}
 	public String toString() {
-//		if(lastName != null && firstName != null && gender != null && dateOfBirth != null) {
-//			StringBuilder result = new StringBuilder();
-//			result.append(firstName + lastName + gender + id + dobToString() + calculateAge());
-//			return result.toString();
-//		}
-//		return "";
 		if(gender != null && dateOfBirth != null) {
 			StringBuilder result = new StringBuilder();
 			result.append(gender + id + dobToString() + calculateAge());
@@ -120,22 +109,6 @@ private OrderVO order;
 	public void setOrder(OrderVO order) {
 		this.order = order;
 	}
-//	public void setLastName(String lastName) {
-//		if(lastName != null) {
-//			this.lastName = lastName;
-//		}
-//	}
-//	public String getLastName() {
-//		return lastName;
-//	}
-//	public void setFirstName(String firstName) {
-//		if(firstName != null) {
-//			this.firstName = firstName;
-//		}
-//	}
-//	public String getFirstName() {
-//		return firstName;
-//	}
 	public void setGender(String gender) {
 		if(gender != null) {
 			this.gender = gender;

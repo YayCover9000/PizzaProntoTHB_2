@@ -2,7 +2,7 @@ package de.thb.dim.pizzaPronto;
 
 import java.util.Objects;
 
-public class PersonVO {
+public abstract class PersonVO {
 	protected String lastName;
 	protected String firstName;
 	protected String street;
@@ -21,16 +21,7 @@ public class PersonVO {
 		setHouseNumber(houseNumber);
 		
 	}
-	
-//	@Override
-//	public String toString() {
-//		if(this.lastName != null && this.firstName != null && this.street != null && houseNumber != 0) {
-//			StringBuilder result = new StringBuilder();
-//			result.append(lastName + ", " + firstName + " " + street + houseNumber);
-//			return result.toString();
-//		}
-//		return null;
-//	}
+
 	@Override
 	public String toString() {
 	    StringBuilder result = new StringBuilder();
