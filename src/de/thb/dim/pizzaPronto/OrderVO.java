@@ -7,7 +7,6 @@ import java.util.Objects;
 
 public class OrderVO {
 	private static final int MAX_DISHES = 10;
-	private static int nextOrderNo = 0;
 	private LocalDateTime timestampStartedOrder;
 	private LocalDateTime timestampDeliveredOrder;
 	private CustomerVO customer; // = new CustomerVO(); // darf nach initialisierung nicht null sein
@@ -17,27 +16,13 @@ public class OrderVO {
 	private int index;
 	private String state;
 	
-	public OrderVO() {
-        this.timestampStartedOrder = LocalDateTime.now();
-        this.shoppingBasket = new PizzaVO[MAX_DISHES];
-        this.index = 0;
-
-        int currentYear = LocalDate.now().getYear();
-        if (nextOrderNo == 0 || nextOrderNo < currentYear) {
-            nextOrderNo = currentYear * 100000 + 1;
-        } else {
-            nextOrderNo++;
-        }
-        orderNo = nextOrderNo;
-    }
-
-	public OrderVO(LocalDateTime timestampStartedOrder, CustomerVO customer) {
-		if (nextOrderNo == 0 || (nextOrderNo / 100000 < LocalDate.now().getYear()))
-			nextOrderNo = LocalDateTime.now().getYear() * 100000;
-		this.orderNo = ++nextOrderNo;
+	
+	public OrderVO(int orderNo, String state, LocalDateTime timestampStartedOrder, CustomerVO customer) {
+		
+		this.orderNo = orderNo;
 		this.setTimestampStartedOrder(timestampStartedOrder);
-		this.setState("started");
 		this.setCustomer(customer);
+		this.setState(state);
 		index = 0;
 		shoppingBasket = new DishVO[MAX_DISHES];
 	}
@@ -118,12 +103,6 @@ public class OrderVO {
 
     public int getOrderNo() {
 		return orderNo;
-	}
-	public static int getNextOrderNo() {
-		return nextOrderNo;
-	}
-	public static void setNextOrderNo(int nextOrderNo) {
-		OrderVO.nextOrderNo = nextOrderNo;
 	}
 	public LocalDateTime getTimestampStartedOrder() {
 		return timestampStartedOrder;
